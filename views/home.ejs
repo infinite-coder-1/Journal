@@ -1,0 +1,14 @@
+<%- include("partials/header") -%>
+<h1>Home</h1>
+<p>One of the ways to deal with any overwhelming emotion is to find a healthy way to express yourself. This makes a journal a helpful tool in managing your mental health. Keeping a journal helps you create order when your world feels like it’s in chaos. You get to know yourself by revealing your most private fears, thoughts, and feelings. Look at your writing time as personal relaxation time. It's a time when you can de-stress and wind down. Write in a place that's relaxing and soothing, maybe with a cup of tea. Look forward to your journaling time. And know that you're doing something good for your mind and body.</p>
+<% entries.forEach(function(entry){ %>
+  <h2><%= entry.name %></h2>
+  <h6><%= entry.date %></h6>
+  <p>
+    <%= entry.content.substring(0, 100) + " ..." %>
+    <a href="/posts/<%= entry.id%>">Read More</a> %>
+  </p>
+
+<% }) %>
+
+<%- include("partials/footer") -%>
